@@ -29,3 +29,15 @@ Vector search (FAISS)
 LLM-based answer generation
 
 The system supports remote usage, authentication, cloud storage, and multi-user collaboration.
+
+## Day 3 — Ingestion Pipeline (PDF, PPTX, Images, Excel)
+
+Today I implemented the ingestion subsystem of BoardRAG, which is responsible for extracting content from files uploaded by presenters. This includes:
+
+- PDF processing using pdfminer
+- PPTX slide extraction using python-pptx
+- OCR text extraction using OpenCV + Tesseract
+- Excel text extraction using pandas
+- Metadata generation for each extracted block
+
+Ingestion is the foundational layer of a RAG system because incorrect or incomplete extraction directly affects retrieval accuracy. This module now generates clean text, structured data, and metadata that will feed into the chunking and embedding pipeline on Day 4.
